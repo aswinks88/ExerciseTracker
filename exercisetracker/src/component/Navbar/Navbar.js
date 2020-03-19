@@ -6,9 +6,10 @@ export default class Navbar extends Component {
         return(
             <nav className='navbar navbar-dark bg-dark navbar-expand-lg'>
                 <Link to='/' className='navbar-brand'>Exercise Tracker</Link>
-                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-      </button> */}
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
                 <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
                     <ul className='navbar-nav mr-auto'>
                         <li className='navbar-item'>

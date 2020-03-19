@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Navbar from './component/Navbar/Navbar'
 import ExerciseList from './component/ExerciseList/ExerciseList'
