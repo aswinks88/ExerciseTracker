@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-
+import UserList from '../UserList/UserList'
 export default class CreateUser extends Component {
     constructor(props){
         super(props)
@@ -12,18 +12,6 @@ export default class CreateUser extends Component {
             users: []
         };
     }
-    componentDidMount(){
-      axios.get('http://localhost:5000/users/')
-      .then(response => {
-        this.setState({
-          users: response.data
-        })
-        console.log(this.state.users)
-      }).catch(err => {
-        console.log(err)
-      })
-    }
- 
     onChangeUsername(e) {
         this.setState({
           username: e.target.value
@@ -45,21 +33,6 @@ export default class CreateUser extends Component {
         window.location.reload('/user')
       }
 
-      deleteUsers(id){
-      axios.delete('http://localhost:5000/users/' + id )
-      .then(res => console.log(res.data))
-       this.setState({
-         users: this.state.users.filter(ul => ul._id !== id)
-       })
-      }
-      userList(){
-       return this.state.users.map(userls => {
-         return (<tr>
-         <td>{userls.username}</td>
-         <td key={userls._id}><button className='btn btn-danger' onClick={this.deleteUsers.bind(this, userls._id)}>Delete</button></td>
-       </tr>)
-       })
-      }
     render(){
         return(
             <div>
@@ -79,20 +52,7 @@ export default class CreateUser extends Component {
     </div>
     
   </form>
-  <div>
-      <h3>User List</h3>
-      <table className='table'>
-        <thead className='thead-light'>
-          <tr>
-            <th>Username</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-            {this.userList()}
-        </tbody>
-      </table>
-    </div>
+  <UserList/>
 </div>
         )
     }
